@@ -1,0 +1,122 @@
+examples/Lock-1.cpp:9:12: style: Variable 'lock' is assigned a value that is never used. [unreadVariable]
+ auto lock = FastLock(mut);
+           ^
+examples/Lock-1.cpp:15:12: style: Variable 'lock' is assigned a value that is never used. [unreadVariable]
+ auto lock = FastLock(mut);
+           ^
+examples/Lock-2.cpp:12:12: style: Variable 'lock' is assigned a value that is never used. [unreadVariable]
+ auto lock = LockGuard(mtx);
+           ^
+examples/Lock-2.cpp:18:12: style: Variable 'lock' is assigned a value that is never used. [unreadVariable]
+ auto lock = LockGuard(mtx);
+           ^
+examples/RWLock.cpp:13:12: style: Variable 'lock' is assigned a value that is never used. [unreadVariable]
+ auto lock = WriteLock(rwl);
+           ^
+examples/RWLock.cpp:19:12: style: Variable 'lock' is assigned a value that is never used. [unreadVariable]
+ auto lock = ReadLock(rwl);
+           ^
+examples/Signal-1.cpp:30:12: style: Variable 'cons' is assigned a value that is never used. [unreadVariable]
+ auto cons = Task::Start(0, consumer);
+           ^
+examples/Signal-1.cpp:31:12: style: Variable 'prod' is assigned a value that is never used. [unreadVariable]
+ auto prod = Task::Start(0, producer);
+           ^
+examples/demo-3.cpp:23:10: style: Variable 't1' is assigned a value that is never used. [unreadVariable]
+ auto t1 = Task::Start(0, proc, std::ref(led[0]), now + std::chrono::milliseconds{  0});
+         ^
+examples/demo-3.cpp:24:10: style: Variable 't2' is assigned a value that is never used. [unreadVariable]
+ auto t2 = Task::Start(0, proc, std::ref(led[1]), now + std::chrono::milliseconds{125});
+         ^
+examples/demo-3.cpp:25:10: style: Variable 't3' is assigned a value that is never used. [unreadVariable]
+ auto t3 = Task::Start(0, proc, std::ref(led[2]), now + std::chrono::milliseconds{250});
+         ^
+examples/demo-3.cpp:26:10: style: Variable 't4' is assigned a value that is never used. [unreadVariable]
+ auto t4 = Task::Start(0, proc, std::ref(led[3]), now + std::chrono::milliseconds{375});
+         ^
+examples/demo-3.cpp:27:10: style: Variable 't5' is assigned a value that is never used. [unreadVariable]
+ auto t5 = Task::Start(0, proc, std::ref(grn),    now + std::chrono::milliseconds{500});
+         ^
+stdc++/async.cpp:14:6: performance:inconclusive: Technically the member function 'X::foo' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+ int foo(int i)        { return i + 3; }
+     ^
+stdc++/async.cpp:15:6: performance:inconclusive: Technically the member function 'X::bar' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+ int bar(int i)        { return i + 7; }
+     ^
+stdc++/async.cpp:16:6: style:inconclusive: Technically the member function 'X::operator()' can be const. [functionConst]
+ int operator()(int i) { return i + 11; }
+     ^
+stdc++/barrier.cpp:30:11: style: Consider using std::transform algorithm instead of a raw loop. [useStlAlgorithm]
+  threads.emplace_back(work, num);
+          ^
+stdc++/stop_callback.cpp:17:20: warning: The lock is ineffective because the mutex is locked at the same scope as the mutex itself. [localMutex]
+  std::unique_lock lock(mutex);
+                   ^
+test/test_alloc/test_alloc_0.c:16:9: error: Common realloc mistake: 'buf1' nulled but not freed upon failure [memleakOnRealloc]
+        buf1 = realloc(buf1, len1);           ASSERT(buf1);
+        ^
+test/test_alloc/test_alloc_0.c:17:9: error: Common realloc mistake: 'buf2' nulled but not freed upon failure [memleakOnRealloc]
+        buf2 = realloc(buf2, len2);           ASSERT(buf2);
+        ^
+test/test_flag/test_flag_1.c:17:20: style: Opposite expression on both sides of '&'. [oppositeExpression]
+  flag  = bitfield & -bitfield;
+                   ^
+test/test_flag/test_flag_1.c:12:11: style: The scope of the variable 'flag' can be reduced. [variableScope]
+ unsigned flag;
+          ^
+test/test_flag/test_flag_1.c:13:11: style: The scope of the variable 'flags' can be reduced. [variableScope]
+ unsigned flags;
+          ^
+test/test_flag/test_flag_2.cpp:17:20: style: Opposite expression on both sides of '&'. [oppositeExpression]
+  flag  = bitfield & -bitfield;
+                   ^
+test/test_flag/test_flag_2.cpp:12:11: style: The scope of the variable 'flag' can be reduced. [variableScope]
+ unsigned flag;
+          ^
+test/test_flag/test_flag_2.cpp:13:11: style: The scope of the variable 'flags' can be reduced. [variableScope]
+ unsigned flags;
+          ^
+test/test_flag/test_flag_3.cpp:22:20: style: Opposite expression on both sides of '&'. [oppositeExpression]
+  flag  = bitfield & -bitfield;
+                   ^
+test/test_flag/test_flag_3.cpp:17:11: style: The scope of the variable 'flag' can be reduced. [variableScope]
+ unsigned flag;
+          ^
+test/test_flag/test_flag_3.cpp:18:11: style: The scope of the variable 'flags' can be reduced. [variableScope]
+ unsigned flags;
+          ^
+test/test_timer/test_timer_2.cpp:3:1: error: syntax error [syntaxError]
+static_TMR_DEF(tmr3) {}
+^
+examples/Semaphore-5.cpp:10:1: error: The one definition rule is violated, different classes/structs have the same name 'Consumer' [ctuOneDefinitionRuleViolation]
+struct Consumer : public Task
+^
+examples/virtual_proc.cpp:24:1: note: The one definition rule is violated, different classes/structs have the same name 'Consumer'
+struct Consumer : public myTask
+^
+examples/Semaphore-5.cpp:10:1: note: The one definition rule is violated, different classes/structs have the same name 'Consumer'
+struct Consumer : public Task
+^
+examples/Semaphore-5.cpp:22:1: error: The one definition rule is violated, different classes/structs have the same name 'Producer' [ctuOneDefinitionRuleViolation]
+struct Producer : public Task
+^
+examples/virtual_proc.cpp:34:1: note: The one definition rule is violated, different classes/structs have the same name 'Producer'
+struct Producer : public myTask
+^
+examples/Semaphore-5.cpp:22:1: note: The one definition rule is violated, different classes/structs have the same name 'Producer'
+struct Producer : public Task
+^
+examples/timer-2.c:4:0: style: The function 'OS_TMR_DEF' is never used. [unusedFunction]
+
+^
+test/test_timer/test_timer_1.c:3:0: style: The function 'static_TMR_DEF' is never used. [unusedFunction]
+
+^
+test/test.c:10:0: style: The function 'test_add' is never used. [unusedFunction]
+
+^
+test/test.c:16:0: style: The function 'test_call' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
